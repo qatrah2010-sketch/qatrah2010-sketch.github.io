@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قطرة | Qatra</title>
+  <link rel="icon" href="icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:    #0D1B2E;
+      --navy2:   #112240;
+      --blue:    #1A6EBF;
+      --sky:     #5BC8F5;
+      --light:   #CCE8F8;
+      --white:   #FFFFFF;
+      --text:    #E2F0FB;
+      --muted:   #8AAFC8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--navy);
+      color: var(--text);
+      font-family: 'Tajawal', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body.en {
+      font-family: 'Inter', sans-serif;
+      direction: ltr;
+    }
+
+    /* ── Lang toggle ── */
+    .lang-toggle {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 100;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      backdrop-filter: blur(8px);
+      transition: background 0.2s;
+    }
+    .lang-toggle:hover { background: rgba(255,255,255,0.18); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(91,200,245,0.12) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -60%);
+      pointer-events: none;
+    }
+
+    .app-icon {
+      width: 120px; height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(91,200,245,0.3);
+      margin-bottom: 28px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 10vw, 72px);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--white) 0%, var(--sky) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .hero .tagline {
+      font-size: clamp(16px, 4vw, 22px);
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      color: var(--white);
+      box-shadow: 0 8px 30px rgba(91,200,245,0.35);
+    }
+    .btn-primary:hover { box-shadow: 0 12px 40px rgba(91,200,245,0.5); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.13); }
+
+    /* ── Features ── */
+    .features {
+      padding: 80px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 900;
+      margin-bottom: 48px;
+      color: var(--white);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(91,200,245,0.3);
+    }
+
+    .feature-icon { font-size: 36px; margin-bottom: 14px; }
+    .feature-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+    .feature-desc  { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── How to install ── */
+    .install {
+      padding: 80px 24px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 20px 24px;
+    }
+
+    .step-num {
+      min-width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--blue), var(--sky));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 16px; color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .step-text { font-size: 16px; line-height: 1.6; color: var(--text); }
+    .step-text strong { color: var(--white); }
+
+    /* ── iOS note ── */
+    .ios-note {
+      background: rgba(91,200,245,0.08);
+      border: 1px solid rgba(91,200,245,0.2);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-top: 32px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .ios-note strong { color: var(--sky); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── Hidden by lang ── */
+    [data-ar], [data-en] { display: none; }
+    html[lang="ar"] [data-ar] { display: block; }
+    html[lang="ar"] .step [data-ar] { display: inline; }
+    html[lang="ar"] .feature-card [data-ar] { display: block; }
+
+    html[lang="en"] [data-en] { display: block; }
+    html[lang="en"] .step [data-en] { display: inline; }
+    html[lang="en"] .feature-card [data-en] { display: block; }
+
+    /* inline spans */
+    span[data-ar], span[data-en] { display: none; }
+    html[lang="ar"] span[data-ar] { display: inline; }
+    html[lang="en"] span[data-en] { display: inline; }
+  </style>
+</head>
+<body>
+
+  <button class="lang-toggle" onclick="toggleLang()">EN | عربي</button>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <img src="icon.png" alt="Qatra" class="app-icon" />
+
+    <h1>
+      <span data-ar>قطرة</span>
+      <span data-en>Qatra</span>
+    </h1>
+
+    <p class="tagline">
+      <span data-ar>رفيقك اليومي لشرب الماء — تتبّع، اشرب، وانمُ</span>
+      <span data-en>Your daily water companion — track, drink, and grow</span>
+    </p>
+
+    <div class="cta-group">
+      <a id="apk-btn" href="#" class="btn btn-primary" download>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/></svg>
+        <span data-ar>حمّل للأندرويد</span>
+        <span data-en>Download for Android</span>
+      </a>
+      <a href="#install" class="btn btn-secondary">
+        <span>🍎</span>
+        <span data-ar>تعليمات الآيفون</span>
+        <span data-en>iPhone Instructions</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features">
+    <h2 class="section-title">
+      <span data-ar>✨ مميزات التطبيق</span>
+      <span data-en>✨ App Features</span>
+    </h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">📸</div>
+        <div class="feature-title">
+          <span data-ar>تسجيل بالكاميرا</span>
+          <span data-en>Log by Camera</span>
+        </div>
+        <div class="feature-desc">
+          <span data-ar>صوّر كوبك وسجّل شربك بلحظة واحدة</span>
+          <span data-en>Snap your cup and log your drink in one tap</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <div class="feature-title">
+          <span data-ar>نبتة تنمو معك</span>
+          <span data-en>Growing Plant</span>
+        </div>
+        <div class="feature-desc">
+          <span data-ar>كل ما شربت أكثر، نبتتك تكبر وتزهر</span>
+          <span data-en>The more you drink, the more your plant grows</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <div class="feature-title">
+          <span data-ar>تنبيهات ذكية</span>
+          <span data-en>Smart Reminders</span>
+        </div>
+        <div class="feature-desc">
+          <span data-ar>تذكيرات في الوقت المناسب طوال يومك</span>
+          <span data-en>Timely reminders throughout your day</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <div class="feature-title">
+          <span data-ar>لوحة المتصدرين</span>
+          <span data-en>Leaderboard</span>
+        </div>
+        <div class="feature-desc">
+          <span data-ar>تنافس مع أصحابك وكن الأكثر ترطيباً</span>
+          <span data-en>Compete with friends and stay hydrated</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔥</div>
+        <div class="feature-title">
+          <span data-ar>Streak يومي</span>
+          <span data-en>Daily Streak</span>
+        </div>
+        <div class="feature-desc">
+          <span data-ar>حافظ على سلسلة أيامك ولا تنقطع</span>
+          <span data-en>Keep your streak going every day</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌙</div>
+        <div class="feature-title">
+          <span data-ar>وضع ليلي</span>
+          <span data-en>Dark Mode</span>
+        </div>
+        <div class="feature-desc">
+          <span data-ar>تصميم مريح للعين في الليل والنهار</span>
+          <span data-en>Eye-friendly design for day and night</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── HOW TO INSTALL ── -->
+  <section class="install" id="install">
+    <h2 class="section-title">
+      <span data-ar>📲 كيف تثبّت التطبيق؟</span>
+      <span data-en>📲 How to Install</span>
+    </h2>
+
+    <!-- Android steps -->
+    <div data-ar>
+      <p style="text-align:center; margin-bottom:24px; color:var(--muted);">🤖 أندرويد</p>
+      <div class="steps">
+        <div class="step"><div class="step-num">١</div><div class="step-text">اضغط على زر <strong>حمّل للأندرويد</strong> بالأعلى</div></div>
+        <div class="step"><div class="step-num">٢</div><div class="step-text">افتح الملف بعد التنزيل واضغط <strong>تثبيت</strong></div></div>
+        <div class="step"><div class="step-num">٣</div><div class="step-text">إذا ظهرت رسالة "مصادر غير معروفة" — اضغط <strong>إعدادات</strong> وفعّل الخيار</div></div>
+        <div class="step"><div class="step-num">٤</div><div class="step-text">ارجع وأكمل التثبيت — <strong>استمتع!</strong> 💧</div></div>
+      </div>
+    </div>
+    <div data-en>
+      <p style="text-align:center; margin-bottom:24px; color:var(--muted);">🤖 Android</p>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-text">Tap <strong>Download for Android</strong> above</div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text">Open the downloaded file and tap <strong>Install</strong></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text">If prompted about "Unknown sources" — tap <strong>Settings</strong> and allow it</div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-text">Go back and finish installation — <strong>enjoy!</strong> 💧</div></div>
+      </div>
+    </div>
+
+    <!-- iOS note -->
+    <div class="ios-note">
+      <span data-ar>
+        🍎 <strong>مستخدمي الآيفون:</strong> افتح الرابط من Safari، ثم اضغط على زر المشاركة
+        <strong>⎙</strong> واختر <strong>"إضافة إلى الشاشة الرئيسية"</strong> — التطبيق سيظهر مثل أي تطبيق عادي!
+      </span>
+      <span data-en>
+        🍎 <strong>iPhone users:</strong> Open this page in Safari, tap the Share button
+        <strong>⎙</strong> and choose <strong>"Add to Home Screen"</strong> — the app will appear just like a native app!
+      </span>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>
+      <span data-ar>صُنع بـ 💧 — قطرة</span>
+      <span data-en>Made with 💧 — Qatra</span>
+    </p>
+  </footer>
+
+  <script>
+    // Detect device language on load
+    const userLang = navigator.language || navigator.userLanguage;
+    const isArabic = userLang.startsWith('ar');
+    setLang(isArabic ? 'ar' : 'en');
+
+    function toggleLang() {
+      const current = document.documentElement.lang;
+      setLang(current === 'ar' ? 'en' : 'ar');
+    }
+
+    function setLang(lang) {
+      const html = document.documentElement;
+      html.lang = lang;
+      html.dir  = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.className = lang === 'en' ? 'en' : '';
+    }
+
+    // APK link — replace with your actual link
+    document.getElementById('apk-btn').href = 'qatra.apk';
+  </script>
+</body>
+</html>
