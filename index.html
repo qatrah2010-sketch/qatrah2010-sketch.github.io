@@ -261,15 +261,15 @@
         <div class="dl-btn-icon">🍎</div>
         <div class="dl-btn-text">
           <span class="dl-btn-label">
-            <span data-ar>أضفه لشاشتك</span>
-            <span data-en>Add to home screen</span>
+            <span data-ar>قريباً على App Store</span>
+            <span data-en>Coming soon</span>
           </span>
           <span class="dl-btn-title">
             <span data-ar>آيفون / iPad</span>
             <span data-en>iPhone / iPad</span>
           </span>
         </div>
-        <svg style="margin-right:auto;margin-left:4px" width="18" height="18" viewBox="0 0 24 24" fill="white" opacity="0.7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        <svg style="margin-right:auto;margin-left:4px" width="18" height="18" viewBox="0 0 24 24" fill="white" opacity="0.7"><path d="M12 8V4l8 8-8 8v-4H4V8z"/></svg>
       </button>
     </div>
   </section>
@@ -338,70 +338,42 @@
     </p>
   </footer>
 
-  <!-- ── iOS MODAL ── -->
+  <!-- ── iOS MODAL — Coming Soon notice ── -->
   <div class="ios-modal-overlay" id="iosModal" onclick="closeOnOverlay(event)">
     <div class="ios-modal">
       <div class="ios-modal-handle"></div>
 
+      <div style="text-align:center;font-size:64px;margin-bottom:8px">🍎</div>
+
       <div class="ios-modal-title">
-        <span data-ar>🍎 تثبيت على الآيفون</span>
-        <span data-en>🍎 Install on iPhone</span>
+        <span data-ar>قريباً على App Store</span>
+        <span data-en>Coming soon to App Store</span>
       </div>
       <div class="ios-modal-sub">
-        <span data-ar>3 خطوات بسيطة — يشتغل مثل أي تطبيق عادي</span>
-        <span data-en>3 simple steps — works just like a native app</span>
+        <span data-ar>نشتغل على نسخة الآيفون. سجّل بريدك ونعلمك أول ما تنزل 📩</span>
+        <span data-en>iOS version is in the works. Get notified when it launches 📩</span>
       </div>
 
-      <div class="ios-steps">
-        <div class="ios-step">
-          <div class="ios-step-num">1</div>
-          <div class="ios-step-body">
-            <div class="ios-step-title">
-              <span data-ar>افتح Safari</span>
-              <span data-en>Open in Safari</span>
-            </div>
-            <div class="ios-step-desc">
-              <span data-ar>تأكد أنك تستخدم Safari وليس Chrome أو غيره</span>
-              <span data-en>Make sure you're using Safari, not Chrome or other browsers</span>
-            </div>
-          </div>
-          <div class="ios-step-icon">🧭</div>
+      <div style="background:rgba(91,200,245,0.08);border:1px solid rgba(91,200,245,0.3);border-radius:14px;padding:18px;margin-bottom:16px">
+        <div style="font-size:14px;font-weight:700;color:white;margin-bottom:10px">
+          <span data-ar>📲 ليش الانتظار؟</span>
+          <span data-en>📲 Why the wait?</span>
         </div>
-
-        <div class="ios-step">
-          <div class="ios-step-num">2</div>
-          <div class="ios-step-body">
-            <div class="ios-step-title">
-              <span data-ar>اضغط زر المشاركة</span>
-              <span data-en>Tap the Share button</span>
-            </div>
-            <div class="ios-step-desc">
-              <span data-ar>الزر في أسفل الشاشة — المربع بالسهم للأعلى ⎙</span>
-              <span data-en>At the bottom of the screen — the box with arrow ⎙</span>
-            </div>
-          </div>
-          <div class="ios-step-icon">⎙</div>
-        </div>
-
-        <div class="ios-step">
-          <div class="ios-step-num">3</div>
-          <div class="ios-step-body">
-            <div class="ios-step-title">
-              <span data-ar>أضف للشاشة الرئيسية</span>
-              <span data-en>Add to Home Screen</span>
-            </div>
-            <div class="ios-step-desc">
-              <span data-ar>اختر "إضافة إلى الشاشة الرئيسية" ثم اضغط "إضافة"</span>
-              <span data-en>Choose "Add to Home Screen" then tap "Add"</span>
-            </div>
-          </div>
-          <div class="ios-step-icon">📲</div>
+        <div style="font-size:13px;color:#8AAFC8;line-height:1.7">
+          <span data-ar>App Store يحتاج موافقة من Apple (2-7 أيام) + حساب مطوّر سنوي. نسوّيها صح من أول مرة 💪</span>
+          <span data-en>App Store requires Apple's review (2-7 days) + annual developer account. We're doing it right 💪</span>
         </div>
       </div>
 
-      <button class="ios-close" onclick="closeIosModal()">
-        <span data-ar>فهمت ✓</span>
-        <span data-en>Got it ✓</span>
+      <a href="mailto:notify@qatra-app.com?subject=iOS Launch Notification&body=Please notify me when Qatra is available on App Store" class="ios-close" style="display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:linear-gradient(135deg, #1A6EBF, #5BC8F5);border:none;color:white;font-weight:700">
+        <span style="font-size:18px">📩</span>
+        <span data-ar>أعلموني عند الإطلاق</span>
+        <span data-en>Notify me at launch</span>
+      </a>
+
+      <button class="ios-close" onclick="closeIosModal()" style="margin-top:8px">
+        <span data-ar>إغلاق</span>
+        <span data-en>Close</span>
       </button>
     </div>
   </div>
