@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شروط الاستخدام | Qatra</title>
+  <link rel="icon" href="icon.png" />
+  <meta name="theme-color" content="#0D1B2E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:  #0D1B2E;
+      --navy2: #112240;
+      --blue:  #1A6EBF;
+      --sky:   #5BC8F5;
+      --white: #FFFFFF;
+      --text:  #E2F0FB;
+      --muted: #8AAFC8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--navy); color: var(--text);
+      font-family: 'Tajawal', sans-serif;
+      min-height: 100vh; line-height: 1.7;
+    }
+    body.en { font-family: 'Inter', sans-serif; direction: ltr; }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 24px; }
+
+    .lang-toggle {
+      position: fixed; top: 16px; left: 16px; z-index: 100;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white); padding: 6px 16px;
+      border-radius: 20px; cursor: pointer; font-size: 14px;
+      backdrop-filter: blur(8px);
+    }
+
+    header.page-header {
+      background: linear-gradient(135deg, var(--blue), var(--navy2));
+      padding: 60px 24px 80px;
+      text-align: center;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: -40px;
+    }
+    header.page-header img {
+      width: 64px; height: 64px; border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(91,200,245,0.4);
+      margin-bottom: 20px;
+    }
+    header.page-header h1 {
+      font-size: clamp(28px, 5vw, 40px); font-weight: 900;
+      color: white; margin-bottom: 6px;
+    }
+
+    .content {
+      background: var(--navy2);
+      border-radius: 24px;
+      padding: 40px clamp(20px, 5vw, 48px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .section { margin-bottom: 28px; }
+    .section h2 {
+      font-size: 18px; font-weight: 900; color: var(--white);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid rgba(91,200,245,0.2);
+    }
+    .section p,.section li {
+      color: var(--text); font-size: 14.5px;
+      margin-bottom: 8px;
+    }
+    .section ul { padding-inline-start: 22px; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 32px; color: var(--muted); text-decoration: none;
+      font-size: 14px;
+    }
+    .back-link:hover { color: var(--sky); }
+
+    footer {
+      text-align: center; padding: 40px 24px;
+      color: var(--muted); font-size: 13px;
+    }
+
+    [data-ar],[data-en] { display: none; }
+    html[lang="ar"] [data-ar] { display: block; }
+    html[lang="en"] [data-en] { display: block; }
+    span[data-ar],span[data-en] { display: none; }
+    html[lang="ar"] span[data-ar] { display: inline; }
+    html[lang="en"] span[data-en] { display: inline; }
+  </style>
+</head>
+<body>
+
+  <button class="lang-toggle" onclick="toggleLang()">EN | عربي</button>
+
+  <header class="page-header">
+    <img src="icon.png" alt="Qatra" />
+    <h1>
+      <span data-ar>شروط الاستخدام</span>
+      <span data-en>Terms of Service</span>
+    </h1>
+  </header>
+
+  <div class="container">
+    <div class="content">
+
+      <div class="section">
+        <h2><span data-ar>1. الموافقة</span><span data-en>1. Acceptance</span></h2>
+        <p data-ar>باستخدامك تطبيق "قطرة" فإنك توافق على هذه الشروط. إذا لم توافق فلا تستخدم التطبيق.</p>
+        <p data-en>By using "Qatra" you agree to these Terms. If you don't agree, please don't use the app.</p>
+      </div>
+
+      <div class="section">
+        <h2><span data-ar>2. وصف الخدمة</span><span data-en>2. Service Description</span></h2>
+        <p data-ar>قطرة تطبيق لتذكير شرب الماء يقدم تذكيرات، تتبع، وتحقق بالذكاء الاصطناعي. التطبيق <strong>ليس بديلاً عن الاستشارة الطبية</strong>.</p>
+        <p data-en>Qatra is a hydration reminder app providing reminders, tracking, and AI verification. The app is <strong>not a substitute for medical advice</strong>.</p>
+      </div>
+
+      <div class="section">
+        <h2><span data-ar>3. الاشتراكات</span><span data-en>3. Subscriptions</span></h2>
+        <ul data-ar>
+          <li>Plus: 9.99 ر.س/شهر أو 69 ر.س/سنة (وفّر 51%).</li>
+          <li>Pro: 19.99 ر.س/شهر أو 149 ر.س/سنة (وفّر 51%).</li>
+          <li>تجربة مجانية 7 أيام بدون بطاقة ائتمان.</li>
+          <li>التجديد تلقائي ما لم تُلغِ من إعدادات Google Play / Apple ID قبل 24 ساعة من نهاية الفترة.</li>
+          <li>المبلغ يُخصم من حساب متجر التطبيقات وليس منا مباشرة.</li>
+        </ul>
+        <ul data-en>
+          <li>Plus: 9.99 SAR/month or 69 SAR/year (save 51%).</li>
+          <li>Pro: 19.99 SAR/month or 149 SAR/year (save 51%).</li>
+          <li>7-day free trial, no credit card required.</li>
+          <li>Auto-renews unless cancelled 24h before period ends, via Google Play / Apple ID settings.</li>
+          <li>Charges go through the app store, not directly to us.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><span data-ar>4. الإلغاء والاسترداد</span><span data-en>4. Cancellation & Refunds</span></h2>
+        <p data-ar>يمكنك إلغاء الاشتراك في أي وقت من إعدادات حساب Google Play / Apple ID. ستحتفظ بالميزات حتى نهاية الفترة المدفوعة. سياسات الاسترداد تتبع متجر التطبيقات.</p>
+        <p data-en>You can cancel anytime from your Google Play / Apple ID account settings. You'll keep premium features until the end of the paid period. Refund policies follow the app store.</p>
+      </div>
+
+      <div class="section">
+        <h2><span data-ar>5. الاستخدام المسموح</span><span data-en>5. Acceptable Use</span></h2>
+        <p data-ar>لا يجوز:</p>
+        <ul data-ar>
+          <li>استخدام التطبيق لأغراض غير قانونية.</li>
+          <li>محاولة عكس هندسة أو اختراق التطبيق.</li>
+          <li>إساءة استخدام ميزة التحقق بالكاميرا (مثل تصوير محتوى غير مناسب).</li>
+        </ul>
+        <p data-en>You may NOT:</p>
+        <ul data-en>
+          <li>Use the app for illegal purposes.</li>
+          <li>Reverse-engineer or hack the app.</li>
+          <li>Misuse the camera verification (e.g. photographing inappropriate content).</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><span data-ar>6. حدود المسؤولية</span><span data-en>6. Limitation of Liability</span></h2>
+        <p data-ar>التطبيق يُقدّم "كما هو". لا نضمن تذكيرات دائمة (بسبب توفير بطارية الجهاز مثلاً)، ولسنا مسؤولين عن أي ضرر صحي أو غيره ناتج عن الاعتماد على التطبيق.</p>
+        <p data-en>The app is provided "as is". We don't guarantee uninterrupted reminders (due to device battery saving etc.), and aren't liable for any health or other damages from relying on the app.</p>
+      </div>
+
+      <div class="section">
+        <h2><span data-ar>7. تغيير الشروط</span><span data-en>7. Changes</span></h2>
+        <p data-ar>قد نُحدّث هذه الشروط. الاستمرار في الاستخدام بعد التحديث يُعتبر موافقة.</p>
+        <p data-en>We may update these Terms. Continued use after updates means acceptance.</p>
+      </div>
+
+      <div class="section">
+        <h2><span data-ar>8. الاتصال</span><span data-en>8. Contact</span></h2>
+        <p data-ar>لأي استفسار: <a href="mailto:support@qatra-app.com" style="color:var(--sky)">support@qatra-app.com</a></p>
+        <p data-en>For questions: <a href="mailto:support@qatra-app.com" style="color:var(--sky)">support@qatra-app.com</a></p>
+      </div>
+
+      <a href="index.html" class="back-link">
+        <span data-ar>← الرجوع للرئيسية</span>
+        <span data-en>← Back to home</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Qatra · <a href="privacy.html" style="color:var(--muted);text-decoration:underline"><span data-ar>سياسة الخصوصية</span><span data-en>Privacy</span></a></p>
+  </footer>
+
+  <script>
+    const userLang = navigator.language || navigator.userLanguage;
+    setLang(userLang.startsWith('ar') ? 'ar' : 'en');
+    function toggleLang() {
+      setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar');
+    }
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.className = lang === 'en' ? 'en' : '';
+    }
+  </script>
+</body>
+</html>

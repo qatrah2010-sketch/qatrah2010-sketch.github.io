@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سياسة الخصوصية | Qatra</title>
+  <link rel="icon" href="icon.png" />
+  <meta name="theme-color" content="#0D1B2E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:  #0D1B2E;
+      --navy2: #112240;
+      --blue:  #1A6EBF;
+      --sky:   #5BC8F5;
+      --white: #FFFFFF;
+      --text:  #E2F0FB;
+      --muted: #8AAFC8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--navy);
+      color: var(--text);
+      font-family: 'Tajawal', sans-serif;
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    body.en { font-family: 'Inter', sans-serif; direction: ltr; }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 24px; }
+
+    .lang-toggle {
+      position: fixed; top: 16px; left: 16px; z-index: 100;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white); padding: 6px 16px;
+      border-radius: 20px; cursor: pointer; font-size: 14px;
+      backdrop-filter: blur(8px);
+    }
+
+    header.page-header {
+      background: linear-gradient(135deg, var(--blue), var(--navy2));
+      padding: 60px 24px 80px;
+      text-align: center;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: -40px;
+    }
+    header.page-header img {
+      width: 64px; height: 64px; border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(91,200,245,0.4);
+      margin-bottom: 20px;
+    }
+    header.page-header h1 {
+      font-size: clamp(28px, 5vw, 40px); font-weight: 900;
+      color: white; margin-bottom: 6px;
+    }
+    header.page-header .subtitle {
+      color: rgba(255,255,255,0.8); font-size: 14px;
+    }
+
+    .content {
+      background: var(--navy2);
+      border-radius: 24px;
+      padding: 40px clamp(20px, 5vw, 48px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section { margin-bottom: 36px; }
+    .section h2 {
+      font-size: 20px; font-weight: 900; color: var(--white);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(91,200,245,0.2);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section p,.section li {
+      color: var(--text); font-size: 15px;
+      margin-bottom: 10px;
+    }
+    .section ul { padding-inline-start: 22px; }
+    .section a { color: var(--sky); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-card {
+      background: rgba(91,200,245,0.08);
+      border: 1px solid rgba(91,200,245,0.3);
+      border-radius: 16px;
+      padding: 24px; margin-top: 32px;
+      text-align: center;
+    }
+    .contact-card .icon { font-size: 36px; margin-bottom: 8px; }
+    .contact-card a { color: var(--sky); font-weight: 700; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 32px; color: var(--muted); text-decoration: none;
+      font-size: 14px; transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--sky); }
+
+    footer {
+      text-align: center; padding: 40px 24px;
+      color: var(--muted); font-size: 13px;
+    }
+
+    [data-ar],[data-en] { display: none; }
+    html[lang="ar"] [data-ar] { display: block; }
+    html[lang="en"] [data-en] { display: block; }
+    span[data-ar],span[data-en] { display: none; }
+    html[lang="ar"] span[data-ar] { display: inline; }
+    html[lang="en"] span[data-en] { display: inline; }
+  </style>
+</head>
+<body>
+
+  <button class="lang-toggle" onclick="toggleLang()">EN | عربي</button>
+
+  <header class="page-header">
+    <img src="icon.png" alt="Qatra" />
+    <h1>
+      <span data-ar>سياسة الخصوصية</span>
+      <span data-en>Privacy Policy</span>
+    </h1>
+    <div class="subtitle">
+      <span data-ar>آخر تحديث: أبريل 2026</span>
+      <span data-en>Last updated: April 2026</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="content">
+
+      <!-- Overview -->
+      <div class="section">
+        <h2>📋 <span data-ar>نظرة عامة</span><span data-en>Overview</span></h2>
+        <p data-ar>تطبيق قطرة ("التطبيق") مُلتزم بحماية خصوصيتك. تشرح هذه السياسة ما نجمعه وكيف نستخدمه وكيف نحميه.</p>
+        <p data-en>Qatra ("the App") is committed to protecting your privacy. This policy explains what we collect, how we use it, and how we protect it.</p>
+      </div>
+
+      <!-- Data we collect -->
+      <div class="section">
+        <h2>📦 <span data-ar>البيانات التي نجمعها</span><span data-en>Data We Collect</span></h2>
+        <ul data-ar>
+          <li><strong>بيانات الملف الشخصي:</strong> الاسم، العمر، الجنس، اللغة، هدف الشرب اليومي، الوزن — تُحفظ <strong>محلياً على جهازك فقط</strong>.</li>
+          <li><strong>سجلات شرب الماء:</strong> الكميات والتوقيتات — تُحفظ محلياً فقط.</li>
+          <li><strong>صور الكاميرا:</strong> تُرسل مؤقتاً إلى Google Gemini AI للتحقق من الكأس، ولا تُحفظ على أي خادم.</li>
+          <li><strong>الموقع التقريبي:</strong> يُستخدم فقط لجلب الطقس وضبط هدفك الذكي (Plus/Pro). الإحداثيات لا تُحفظ.</li>
+          <li><strong>بيانات الاشتراك:</strong> تُعالج عبر Google Play Billing مباشرةً، ولا نحتفظ بأي بيانات بطاقات.</li>
+        </ul>
+        <ul data-en>
+          <li><strong>Profile data:</strong> name, age, gender, language, daily goal, weight — stored <strong>locally only</strong>.</li>
+          <li><strong>Water logs:</strong> amounts and timestamps — stored locally only.</li>
+          <li><strong>Camera photos:</strong> sent temporarily to Google Gemini AI for cup verification and not retained.</li>
+          <li><strong>Approximate location:</strong> used only for weather-based smart goal (Plus/Pro). Coordinates aren't stored.</li>
+          <li><strong>Subscription data:</strong> processed via Google Play Billing directly. Card details never seen.</li>
+        </ul>
+      </div>
+
+      <!-- What we do NOT do -->
+      <div class="section">
+        <h2>🚫 <span data-ar>ما لا نفعله</span><span data-en>What We Do NOT Do</span></h2>
+        <ul data-ar>
+          <li>لا نبيع بياناتك لأي طرف ثالث.</li>
+          <li>لا نُخزّن صورك أو بياناتك الشخصية على خوادمنا.</li>
+          <li>لا نتتبع موقعك الجغرافي بدقة.</li>
+          <li>لا نشارك بياناتك مع أي جهة إعلانية بشكل تعريفي.</li>
+        </ul>
+        <ul data-en>
+          <li>We do not sell your data to third parties.</li>
+          <li>We do not store your photos or personal data on our servers.</li>
+          <li>We do not track your precise location.</li>
+          <li>We do not share identifying data with advertisers.</li>
+        </ul>
+      </div>
+
+      <!-- Camera -->
+      <div class="section">
+        <h2>📷 <span data-ar>صلاحية الكاميرا</span><span data-en>Camera Permission</span></h2>
+        <p data-ar>يطلب التطبيق صلاحية الكاميرا فقط عند استخدام ميزة التحقق بالكاميرا. الصور تُعالج لحظياً ثم تُحذف ولا تُحفظ على أي خادم.</p>
+        <p data-en>Camera access is requested only when using the cup verification feature. Photos are processed instantly and deleted — never stored on any server.</p>
+      </div>
+
+      <!-- Notifications -->
+      <div class="section">
+        <h2>🔔 <span data-ar>الإشعارات</span><span data-en>Notifications</span></h2>
+        <p data-ar>نرسل إشعارات تذكيرية لشرب الماء كل ساعة خلال الفترة التي تختارها. يمكنك إيقافها في أي وقت من إعدادات الجهاز أو التطبيق.</p>
+        <p data-en>We send hourly water reminders during the time range you choose. You can disable them in device or app settings at any time.</p>
+      </div>
+
+      <!-- AI -->
+      <div class="section">
+        <h2>🤖 <span data-ar>الذكاء الاصطناعي (Google Gemini)</span><span data-en>AI (Google Gemini)</span></h2>
+        <p data-ar>نستخدم Google Gemini API للتحقق من صور الكأس وللمدرّب الصحي (AI Coach). الصور والرسائل المُرسلة لا تشمل أي معلومات تعريفية شخصية. سياسة خصوصية Google: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+        <p data-en>We use Google Gemini API for cup verification and AI Coach. Sent data contains no personally identifiable information. Google privacy policy: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+      </div>
+
+      <!-- Ads -->
+      <div class="section">
+        <h2>📺 <span data-ar>الإعلانات (Free فقط)</span><span data-en>Advertising (Free tier only)</span></h2>
+        <p data-ar>المستخدمون المجانيون يرون إعلانات من خلال Google AdMob. مشتركو Plus و Pro <strong>لا يرون إعلانات نهائياً</strong>. سياسة خصوصية AdMob: <a href="https://support.google.com/admob/answer/6128543" target="_blank">support.google.com/admob</a></p>
+        <p data-en>Free users see ads via Google AdMob. Plus and Pro subscribers <strong>see no ads at all</strong>. AdMob privacy: <a href="https://support.google.com/admob/answer/6128543" target="_blank">support.google.com/admob</a></p>
+      </div>
+
+      <!-- Payments -->
+      <div class="section">
+        <h2>💳 <span data-ar>المدفوعات والاشتراكات</span><span data-en>Payments & Subscriptions</span></h2>
+        <p data-ar>تتم عمليات الدفع بالكامل عبر Google Play Billing وApple App Store. لا نطّلع على بيانات بطاقاتك ولا نحتفظ بها. لإلغاء الاشتراك: إعدادات الجهاز ← Google Play / Apple ID ← الاشتراكات.</p>
+        <p data-en>All payments are handled by Google Play Billing and Apple App Store. We never see card information. To cancel: device Settings → Subscriptions.</p>
+      </div>
+
+      <!-- Children -->
+      <div class="section">
+        <h2>👶 <span data-ar>خصوصية الأطفال</span><span data-en>Children's Privacy</span></h2>
+        <p data-ar>التطبيق غير موجه لمن هم دون سن 13 عاماً. لا نجمع عن قصد بيانات من الأطفال.</p>
+        <p data-en>The App is not directed to children under 13. We do not knowingly collect data from children.</p>
+      </div>
+
+      <!-- Updates -->
+      <div class="section">
+        <h2>🔄 <span data-ar>تحديثات السياسة</span><span data-en>Policy Updates</span></h2>
+        <p data-ar>قد نحدّث هذه السياسة من وقت لآخر. سنعلمك بالتغييرات الجوهرية عبر إشعار داخل التطبيق.</p>
+        <p data-en>We may update this policy periodically. Material changes will be communicated via in-app notification.</p>
+      </div>
+
+      <!-- Rights -->
+      <div class="section">
+        <h2>⚖️ <span data-ar>حقوقك</span><span data-en>Your Rights</span></h2>
+        <ul data-ar>
+          <li><strong>حق الوصول:</strong> بياناتك كلها على جهازك يمكنك مراجعتها في أي وقت.</li>
+          <li><strong>حق الحذف:</strong> "الإعدادات → حذف جميع البيانات" أو احذف التطبيق نهائياً.</li>
+          <li><strong>حق التصحيح:</strong> عدّل ملفك الشخصي من داخل التطبيق متى ما شئت.</li>
+        </ul>
+        <ul data-en>
+          <li><strong>Access:</strong> all your data is on your device, viewable any time.</li>
+          <li><strong>Deletion:</strong> "Settings → Delete all data" or uninstall the app.</li>
+          <li><strong>Correction:</strong> edit your profile from within the app at any time.</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-card">
+        <div class="icon">📬</div>
+        <div data-ar>للأسئلة أو الاستفسارات:</div>
+        <div data-en>For questions or concerns:</div>
+        <a href="mailto:support@qatra-app.com">support@qatra-app.com</a>
+      </div>
+
+      <a href="index.html" class="back-link">
+        <span data-ar>← الرجوع للرئيسية</span>
+        <span data-en>← Back to home</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Qatra · <a href="terms.html" style="color:var(--muted);text-decoration:underline"><span data-ar>شروط الاستخدام</span><span data-en>Terms</span></a></p>
+  </footer>
+
+  <script>
+    const userLang = navigator.language || navigator.userLanguage;
+    setLang(userLang.startsWith('ar') ? 'ar' : 'en');
+
+    function toggleLang() {
+      setLang(document.documentElement.lang === 'ar' ? 'en' : 'ar');
+    }
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.className = lang === 'en' ? 'en' : '';
+    }
+  </script>
+</body>
+</html>
